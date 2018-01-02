@@ -42,8 +42,11 @@ $dateReceived = date("Y-m-d");
 		echo $nameCampus = $row['nameCampus'];   
    }
 
-$sql="INSERT INTO Orders (empName, empTitle1, empTitle2, empContact1, empContact2, empContact3, empContact4,empCampus, empFund, empDept, empProgram, empClass, empProject, reqName, reqEmail, dateReceived) VALUES ('$empName', '$empTitle1', '$empTitle2', '$empContact1', '$empContact2', '$empContact3', '$empContact4', '$empCampus','$empFund','$empDept', '$empProgram','$empClass','$empProject','$reqName','$reqEmail','$dateReceived')";
-$businessCard->rawQuery($sql);
+$sql="INSERT INTO Orders (empName, empTitle1, empTitle2, empContact1, empContact2, empContact3, empContact4,empCampus, 
+empFund, empDept, empProgram, empClass, empProject, reqName, reqEmail, dateReceived) VALUES 
+('$empName', '$empTitle1', '$empTitle2', '$empContact1', '$empContact2', '$empContact3', '$empContact4'
+, '$empCampus','$empFund','$empDept', '$empProgram','$empClass','$empProject','$reqName','$reqEmail','$dateReceived')";
+echo $businessCard->rawQuery($sql);
 
 send_mail($empName, $nameCampus , $servername, $reqName);
 ?>
