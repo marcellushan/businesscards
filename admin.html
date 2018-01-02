@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Open House at GHC</title>
+
+	<!-- Bootstrap -->
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootswatch/3.1.1/united/bootstrap.min.css">
+	<link rel="stylesheet" href="css/bootswatch.min.css">
+
+	<!-- Datepicker -->
+	<link rel="stylesheet" href="dtp/css/bootstrap-datetimepicker.min.css" />
+
+	<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+		<!--[if lt IE 9]>
+		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+		<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+		<![endif]-->
+
+	</head>
+	<body style="background-color:#004990;">
+		<div class="container">
+			<div class="jumbotron" style="padding-top:30px;">
+				<img style="float:left; margin-right: 20px;"  src="images/logo.png" />
+				<h1 >Open House List at GHC</h1>
+				<p>
+					View, Add and Manage 
+					<br>Open House Events at GHC
+					<br>
+					<br>
+				</p>
+			</div>
+			<div id="messageSaved"></div>
+			<div class="well">
+				<form  role="form" class="form-inline" id="addopenhouse" name="addopenhouse">
+				<fieldset>
+						<!-- Form Name -->
+						<legend>
+							Add a Open House
+						</legend>
+
+							<!-- Select Basic -->
+							 <div class="form-group col-md-2">
+							 <label class="sr-only" for="campus">Campus</label>
+							<select class="form-control" id="campus" name="campus">
+							<option disabled selected>select campus</option>
+								<option>Floyd/Rome, GA</option>
+								<option>Cartersville, GA</option>
+								<option>Douglasville, GA</option>
+								<option>Floyd/Heritage Hall, GA</option>
+								<option>Marietta, GA</option>
+								<option>Paulding/Dallas, GA</option>
+							</select>
+							</div>
+							<!-- Date Picker -->
+							 <div class="form-group col-md-3">
+								<div class='input-group date ' id='ohdate' name='ohdate'>
+								<label class="sr-only" for="getdate">Date</label>
+									<input type='text' id='getdate' name='getdate' class="form-control" data-date-format="YYYY-MM-DD HH:MM:00" placeholder="pick date"/>
+									<span class="input-group-addon">
+										<span class="glyphicon glyphicon-calendar"></span>
+									</span>
+							</div>
+						</div>
+						 <div class="form-group col-md-2">
+						  <label class="sr-only" for="addopen">Add Date</label>
+								<button id="addopen" name="addopen" type="button" class="btn btn-primary">
+									Submit
+								</button>
+						</div>
+						</fieldset>
+			</form>
+		</div>
+		<div class="well">
+		<legend>
+							Current Sign Ups by Campus
+						</legend>
+			<div id="groupcnt"></div>
+		</div>
+		<div class="well">
+				<form  role="form" class="form-inline" id="selectCamp" name="selectCamp" action="php/showDates.php" method="post">
+				<fieldset>
+						<!-- Form Name -->
+						<legend>
+							Select Campus to Download
+						</legend>
+
+							<!-- Select Basic -->
+							 <div class="form-group col-md-2">
+							 <label class="sr-only" for="selectCampus">Select Campus</label>
+							<select class="form-control" id="selectCampus" name="selectCampus">
+							<option disabled selected>select campus</option>
+								<option>Floyd/Rome, GA</option>
+								<option>Cartersville, GA</option>
+								<option>Douglasville, GA</option>
+								<option>Floyd/Heritage Hall, GA</option>
+								<option>Marietta, GA</option>
+								<option>Paulding/Dallas, GA</option>
+							</select>
+							</div>
+							<!-- Select Date for Open House -->
+							<div class="form-group col-md-3">
+							 <label class="sr-only" for="selectDate">Select Date</label>
+							<select class="form-control" id="selectDate" name="selectDate">
+							<option disabled selected>select campus first</option>
+							</select>
+							</div>
+						 <div class="form-group col-md-2">
+						  <label class="sr-only" for="pickCamp">Select Campus</label>
+								<button id="pickCamp" name="pickCamp" type="submit" class="btn btn-warning">
+									Submit
+								</button>
+						</div>
+						</fieldset>
+			</form>
+		</div>
+		<!-- Include all compiled plugins (below), or include individual files as needed -->
+		<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+		<script src="jquery/jquery.min.js"></script>
+		<!-- Latest compiled and minified JavaScript -->
+		<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+		<script src="js/bootswatch.js"></script>
+		<!-- DateTimePicker JavaScript -->
+		<script src="dtp/js/moment.min.js"></script>
+		<script src="dtp/js/bootstrap-datetimepicker.min.js"></script>
+		<script type="text/javascript">
+			$(function () {
+				$('#ohdate').datetimepicker();
+			});
+		</script>
+		<!-- jQuery Form Validation -->
+		<script src="//ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/jquery.validate.min.js"></script>
+		<script src="admin.js"></script>
+	</div>
+	<!-- /container -->
+	<div class='container'>
+		<div align="center" class="footer text-primary">
+			<p>
+				&copy; Georgia Highlands College 2014 to Present
+			</p>
+		</div>
+	</div>
+</body>
+</html>
