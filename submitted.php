@@ -46,7 +46,8 @@ $sql="INSERT INTO Orders (empName, empTitle1, empTitle2, empContact1, empContact
 empFund, empDept, empProgram, empClass, empProject, reqName, reqEmail, dateReceived) VALUES 
 ('$empName', '$empTitle1', '$empTitle2', '$empContact1', '$empContact2', '$empContact3', '$empContact4'
 , '$empCampus','$empFund','$empDept', '$empProgram','$empClass','$empProject','$reqName','$reqEmail','$dateReceived')";
-echo $businessCard->rawQuery($sql);
+echo  "test";
+$businessCard->rawQuery($sql);
 
 send_mail($empName, $nameCampus , $servername, $reqName);
 ?>
